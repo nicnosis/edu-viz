@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Nicolas Aguirre, ProPublica">
     <link rel="icon" href="docs/favicon.ico">
 
     <title>uniMap</title>
@@ -16,43 +16,47 @@
 
     <link href="style.css" rel="stylesheet">
 
+    <!-- Leaflet, leaflet-ajax, esri Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+    <script src="js/leaflet.ajax.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="docs/assets/js/ie10-viewport-bug-workaround.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <a class="navbar-brand" href="#">uniMap</a>
-      <ul class="nav nav-pills">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <a class="navbar-brand" href="#">uniMap</a>
+    <ul class="nav nav-pills">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">Contact</a>
         </li>
-      </ul>
-    </nav>
+    </ul>
+</nav>
 
-    <div class="container">
-      <div class="starter-template">
+<div class="container">
+    <div class="starter-template">
         <h1>Map Thing</h1>
-          <div id="map"></div>
-      </div>
-    </div><!-- /.container -->
+        <div id="map"></div>
+    </div>
+</div>
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="docs/assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="docs/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="docs/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="docs/dist/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
-    <script type="text/javascript" src="bower_components/topojson/topojson.js"></script>
-  </body>
+<script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+<script type="text/javascript" src="bower_components/topojson/topojson.js"></script>
+</body>
 </html>
