@@ -34,6 +34,8 @@ workspace.xml
 nbproject
 Thumbs.db
 
+data
+
 # Komodo
 .komodotools
 *.komodoproject
@@ -51,3 +53,6 @@ scss-lint-report.xml
 # Folders to ignore
 bower_components
 node_modules
+
+# large data
+MERGED2013_PP.csv
