@@ -60,9 +60,43 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN;
     });
 
+    // Draw gridlines for x axis
+    svg.selectAll("line.verticalGrid").data(xScale.ticks()).enter()
+        .append("line")
+        .attr(
+        {
+            "class": "verticalGrid",
+            "x1" : function(d) { return xScale(d); },
+            "x2" : function(d) { return xScale(d); },
+            "y1" : height,
+            "y2" : 0,
+            "fill" : "none",
+            "stroke" : "#ccc",
+            "stroke-width" : "0.75px",
+            "stroke-opacity" : 0.7
+        }
+    );
+
+    // Draw gridlines for y axis
+    svg.selectAll('line.horizontalGrid').data(yScale.ticks()).enter()
+        .append('line')
+        .attr(
+        {
+            "class": "horizontalGrid",
+            "x1" : 0,
+            "x2" : width,
+            "y1" : function(d) { return yScale(d); },
+            "y2" : function(d) { return yScale(d); },
+            "fill" : "none",
+            "stroke" : "#ccc",
+            "stroke-width" : "0.75px",
+            "stroke-opacity" : 0.7
+        }
+    );
+
     // Set scale domains
     xScale.domain(d3.extent(data, function(d) { return d.FIRSTGEN_DEBT_MDN; })).nice();
-    yScale.domain(d3.extent(data, function(d) { return d.PELL_DEBT_MDN; })).nice();
+    yScale.domain(d3.extent(data, function(d) { return d.PELL_DEBT_MDN;     })).nice();
 
     // Axes
     svg.append("g")
@@ -74,7 +108,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         .attr("x", width)
         .attr("y", -6)
         .style("text-anchor", "end")
-        .text("Median First Generation Debt");;
+        //.text("Median First Generation Debt");
 
     svg.append("g")
         .attr("class", "y axis")
@@ -85,7 +119,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Median Pell Grantee Debt");
+        //.text("Median Pell Grantee Debt");
 
     // Render circles
     svg.selectAll(".dot")
