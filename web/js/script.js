@@ -22,6 +22,10 @@ var yValue = function(d) { return d.PELL_DEBT_MDN; },   // data  -> value
     yMap = function(d) { return yScale(yValue(d)) ; },  // data  -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
+// Scale and accessor for circle radius (student population)
+function radius(d) { return d.UGDS; };
+var radiusScale = d3.scale.sqrt().domain([0, 70000]).range([0, 15]);
+
 // Add graph canvas to chart div
 var svg = d3.select("#chart").append("svg")
     .attr("class", "viz")
@@ -36,7 +40,8 @@ var tip = d3.tip()
     .offset([-10, 0])
     .html(function(d) {
         return "<b>" + d.INSTNM + " - 2013</b><br>" +
-            "Median Pell Grantee Debt: $" + d.PELL_DEBT_MDN +
+            "Degree-seeking undergraduates: " + d.UGDS +
+            "<br/>Median Pell Grantee Debt: $" + d.PELL_DEBT_MDN +
             "<br/> Median First Generation Debt: $" + d.FIRSTGEN_DEBT_MDN;
     });
 svg.call(tip);
@@ -50,6 +55,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
     data.forEach(function(d) {
         //populateSchoolArray(d, schools);
         //printSchools(schools);
+        d.UGDS                = +d.UGDS;
         d.PELL_DEBT_MDN     = +d.PELL_DEBT_MDN;
         d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN;
     });
@@ -81,15 +87,34 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         .style("text-anchor", "end")
         .text("Median Pell Grantee Debt");
 
-
     // Render circles
     svg.selectAll(".dot")
         .data(data)
         .enter().append("circle")
-        .attr("class", "dot")
-        .attr("r", 5)
+        .attr("class", function(d) {
+            var s = "dot ";
+            switch (d.CONTROL) {
+                case '1':
+                    return s + "public";
+                    break;
+                case '2':
+                    return s + "private-nonprofit";
+                    break;
+                case '3':
+                    return s + "private-for-profit";
+                    break;
+
+                default: break;
+            }
+
+            return s;
+        })
+        .attr("r", function(d) { return radiusScale(radius(d)) ; })
         .attr('cx', xMap)
         .attr('cy', yMap)
+        .sort(function order(a, b) {
+            return radius(b) - radius(a);
+        })
         .on('mouseover', function(d) {
             tip.show(d);
         })
