@@ -4,6 +4,8 @@
 }
 #content { text-align:left; font-size:12px; }
 
+body {font-family: 'Droid Sans', sans-serif;}
+
 /************* Viz ***********/
 #chart       { float: left; }
 #select-vars { float: left; }
@@ -26,7 +28,7 @@
     fill-opacity: 0.8;
 }
 
-.d3-tip{
+.d3-tip {
     width: 250px;
     background-color: rgba(255, 255, 255, 0.85);
 
@@ -36,4 +38,8 @@
     font-family: sans-serif;
     /*color: #478D2E;*/
     color: #222;
+}
+
+.label {
+    font-size: 12px;
 }

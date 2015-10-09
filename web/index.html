@@ -14,47 +14,48 @@
     <link href="docs/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="docs/assets/js/ie10-viewport-bug-workaround.js"></script>
 </head>
 
 <body>
-
 <nav class="navbar navbar-inverse">
-    <a class="navbar-brand" href="#">uniMap</a>
+    <a class="navbar-brand" href="#">eduViz</a>
     <ul class="nav nav-pills">
         <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <!--
-        <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-        </li>
-        -->
     </ul>
 </nav>
 
 <div class="container-fluid">
     <div class="starter-template">
+        <div class="row">
+            <div class="col-md-9 col-xs-12">
+                <div id="select-vars">
+                    <select class="select-x">
+                        <option value="x">X var</option>    <br />
+                    </select>
+                    <select class="select-y">
+                        <option value="y">Y var</option>
+                    </select>
 
-        <div id="select-vars">
-            <select class="select-x">
-                <option value="x">X var</option>    <br />
-            </select>
-            <select class="select-y">
-                <option value="y">Y var</option>
-            </select>
+                    <button type="button">Go</button>
+                </div> <br /><hr />
 
-            <button type="button">Go</button>
-        </div> <br /><hr />
-
-
-        <div id="chart"></div>
-        <div id="content"></div>
-
+                <div id="chart"></div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <div id="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat pellentesque turpis sit amet cursus. Proin dignissim sit amet metus vitae euismod. Nam eu maximus ipsum. Mauris sed consectetur augue. Aenean ac gravida ligula. Phasellus sagittis neque leo, nec auctor lectus dignissim a. In ante dolor, imperdiet in venenatis non, pharetra sed augue. Ut finibus ex id ipsum mollis, in posuere elit lobortis. Praesent sodales et ex at rhoncus. Donec gravida ut mauris sed dignissim. Sed sagittis iaculis enim ut aliquet. Vivamus euismod tortor massa, a pharetra ex bibendum eu. Mauris et commodo libero, eget laoreet leo. Pellentesque nunc risus, placerat ac elit at, sollicitudin sollicitudin lacus. Suspendisse nec ipsum efficitur, tempus nulla eget, venenatis ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
