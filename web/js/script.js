@@ -11,16 +11,16 @@ var margin = {top: 20, right: 20, bottom: 20, left: 50},
 
 
 // setup x
-var xValue = function(d) { return d.INSTNM; }, // data -> value
-    xScale = d3.scale.ordinal().rangeRoundBands([0, width],.1), // value -> display
-    xMap = function(d) { return xScale(xValue(d)) ; }, // data -> display
+var xValue = function(d) { return d.FIRSTGEN_DEBT_MDN; },       // data  -> value
+    xScale = d3.scale.linear().range([0, width]),               // value -> display
+    xMap = function(d) { return xScale(xValue(d)) ; },          // data  -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d.PELL_DEBT_MDN; },   // data -> value
+var yValue = function(d) { return d.PELL_DEBT_MDN; },   // data  -> value
     yScale = d3.scale.linear().range([height, 0]),      // value -> display
-    yMap = function(d) { return yScale(yValue(d)) ; },  // data -> display
-    yAxis = d3.svg.axis().scale(yScale).orient("left").tickFormat(function(d) { return d ; });
+    yMap = function(d) { return yScale(yValue(d)) ; },  // data  -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // Add graph canvas to chart div
 var svg = d3.select("#chart").append("svg")
@@ -35,7 +35,9 @@ var tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-        return "<b>" + d.INSTNM + " - 2013</b><br>" + d.PELL_DEBT_MDN;
+        return "<b>" + d.INSTNM + " - 2013</b><br>" +
+            "Median Pell Grantee Debt: $" + d.PELL_DEBT_MDN +
+            "<br/> Median First Generation Debt: $" + d.FIRSTGEN_DEBT_MDN;
     });
 svg.call(tip);
 
@@ -44,28 +46,28 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
 
     // Get data of interest
     data = data.filter(function(d) { return (d.CCBASIC == 15 || d.CCBASIC == "15"); });
-    data = data.filter(function(d) { return !isNaN(d.PELL_DEBT_MDN); });
+    data = data.filter(function(d) { return !(isNaN(d.PELL_DEBT_MDN) || isNaN(d.FIRSTGEN_DEBT_MDN)); });
     data.forEach(function(d) {
         //populateSchoolArray(d, schools);
         //printSchools(schools);
-        d["PELL_DEBT_MDN"] = +d["PELL_DEBT_MDN"];
+        d.PELL_DEBT_MDN     = +d.PELL_DEBT_MDN;
+        d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN;
     });
+
+    // Set scale domains
+    xScale.domain(d3.extent(data, function(d) { return d.FIRSTGEN_DEBT_MDN; })).nice();
+    yScale.domain(d3.extent(data, function(d) { return d.PELL_DEBT_MDN; })).nice();
 
     // Axes
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-        .append("text");
+        .call(xAxis);
 
     svg.append("g")
         .attr("class", "y axis")
-        .call(yAxis)
-        .append("text");
+        .call(yAxis);
 
-    // Set scale domains
-    xScale.domain(d3.extent(data, function(d) { return d.INSTNM; }));
-    yScale.domain(d3.extent(data, function(d) { return d.PELL_DEBT_MDN; }));
 
     // Render circles
     svg.selectAll(".dot")

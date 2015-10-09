@@ -8,13 +8,14 @@
 #chart       { float: left; }
 #select-vars { float: left; }
 
+
+.axis { font-size: 12px; }
 .axis path,
 .axis line {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
 }
-.x.axis path { display: none; }
 
 .dot {
     stroke: #222;
@@ -23,4 +24,16 @@
     opacity: 0.6;
     fill: steelblue;
     fill-opacity: 0.8;
+}
+
+.d3-tip{
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.85);
+
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    /*color: #478D2E;*/
+    color: #222;
 }
