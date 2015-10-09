@@ -35,3 +35,13 @@ function populateSchoolArray(d, schools) {
         "CCBASIC" : d.CCBASIC
     });
 };
+
+function printSchools(schools) {
+    var text = "";
+
+    jQuery.each(schools, function(i, val) {
+        text += val.INSTNM + " is a research university in " + val.CITY + "</br>";
+    });
+
+    $("#content").html(text);
+}
