@@ -17,14 +17,14 @@ var xValue = function(d) { return d.FIRSTGEN_DEBT_MDN; },       // data  -> valu
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d.PELL_DEBT_MDN; },   // data  -> value
-    yScale = d3.scale.linear().range([height, 0]),      // value -> display
-    yMap = function(d) { return yScale(yValue(d)) ; },  // data  -> display
+var yValue = function(d) { return d.PELL_DEBT_MDN; },           // data  -> value
+    yScale = d3.scale.linear().range([height, 0]),              // value -> display
+    yMap = function(d) { return yScale(yValue(d)) ; },          // data  -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // Scale and accessor for circle radius (student population)
 function radius(d) { return d.UGDS; };
-var radiusScale = d3.scale.sqrt().domain([0, 70000]).range([0, 15]);
+var radiusScale = d3.scale.sqrt().domain([0, 70000]).range([0, 15]);    // 70000 students = 15px radius
 
 // Add graph canvas to chart div
 var svg = d3.select("#chart").append("svg")
@@ -50,14 +50,14 @@ svg.call(tip);
 d3.csv ("MERGED2013_PP.csv", function(error, data) {
 
     // Get data of interest
-    data = data.filter(function(d) { return (d.CCBASIC == 15 || d.CCBASIC == "15"); });
-    data = data.filter(function(d) { return !(isNaN(d.PELL_DEBT_MDN) || isNaN(d.FIRSTGEN_DEBT_MDN)); });
+    data = data.filter(function(d) { return (d.CCBASIC == 15 || d.CCBASIC == "15"); }); // Research unis only
+    data = data.filter(function(d) { return !(isNaN(d.PELL_DEBT_MDN) || isNaN(d.FIRSTGEN_DEBT_MDN)); }); // Pell and 1stgen debt
     data.forEach(function(d) {
         //populateSchoolArray(d, schools);
         //printSchools(schools);
-        d.UGDS                = +d.UGDS;
-        d.PELL_DEBT_MDN     = +d.PELL_DEBT_MDN;
-        d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN;
+        d.UGDS                = +d.UGDS;            // Degree-seeking undergrads
+        d.PELL_DEBT_MDN     = +d.PELL_DEBT_MDN;     // Median Pell debt
+        d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN; // Median debt for first-gen students
     });
 
     // Draw gridlines for x axis
@@ -98,7 +98,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
     xScale.domain(d3.extent(data, function(d) { return d.FIRSTGEN_DEBT_MDN; })).nice();
     yScale.domain(d3.extent(data, function(d) { return d.PELL_DEBT_MDN;     })).nice();
 
-    // Axes
+    // Render axes
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
@@ -108,7 +108,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         .attr("x", width)
         .attr("y", -6)
         .style("text-anchor", "end")
-        //.text("Median First Generation Debt");
+        .text("Median First Generation Debt");
 
     svg.append("g")
         .attr("class", "y axis")
@@ -119,7 +119,7 @@ d3.csv ("MERGED2013_PP.csv", function(error, data) {
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        //.text("Median Pell Grantee Debt");
+        .text("Median Pell Grantee Debt");
 
     // Render circles
     svg.selectAll(".dot")
