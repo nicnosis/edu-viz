@@ -26,45 +26,41 @@ var yValue = function(d) { return d.PELL_DEBT_MDN; },           // data  -> valu
 function radius(d) { return d.UGDS; };
 var radiusScale = d3.scale.sqrt().domain([0, 70000]).range([0, 15]);    // 70000 students = 15px radius
 
+// Add graph canvas to chart div
+var svg = d3.select("#chart").append("svg")
+    .attr("class", "viz")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+// Initialize d3 tip
+var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+        return "<b>" + d.INSTNM + " - " + d.YEAR + "</b><br>" +
+            "Degree-seeking undergraduates: " + d.UGDS +
+            "<br/>Median Pell Grantee Debt: $" + d.PELL_DEBT_MDN +
+            "<br/> Median First Generation Debt: $" + d.FIRSTGEN_DEBT_MDN;
+    });
+svg.call(tip);
 
 // Load data
 function renderChart(year) {
 
     d3.csv ("longitudinal.csv", function(error, data) {
-        // Add graph canvas to chart div
-        var svg = d3.select("#chart").append("svg")
-            .attr("class", "viz")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        // Initialize d3 tip
-        var tip = d3.tip()
-            .attr('class', 'd3-tip')
-            .offset([-10, 0])
-            .html(function(d) {
-                return "<b>" + d.INSTNM + " - " + d.YEAR + "</b><br>" +
-                    "Degree-seeking undergraduates: " + d.UGDS +
-                    "<br/>Median Pell Grantee Debt: $" + d.PELL_DEBT_MDN +
-                    "<br/> Median First Generation Debt: $" + d.FIRSTGEN_DEBT_MDN;
-            });
-        svg.call(tip);
-        // ^ Really need to move this ^
 
         // Get data of interest
         data = data.filter(function(d) { return (d.CCBASIC == 15 || d.CCBASIC == "15"); }); // Research unis only
         data = data.filter(function(d) { return !(isNaN(d.PELL_DEBT_MDN) || isNaN(d.FIRSTGEN_DEBT_MDN)); }); // Pell and 1stgen debt
         data.forEach(function(d) {
-            //populateSchoolArray(d, schools);
-            //printSchools(schools);
             d.UGDS                = +d.UGDS;            // Degree-seeking undergrads
             d.PELL_DEBT_MDN     = +d.PELL_DEBT_MDN;     // Median Pell debt
             d.FIRSTGEN_DEBT_MDN = +d.FIRSTGEN_DEBT_MDN; // Median debt for first-gen students
-            d.YEAR = +d.YEAR
+            //d.YEAR              = +d.YEAR;
         });
-        data = data.filter(function(d) { return (d.YEAR = year) }); // not working?
+        //data = data.filter(function(d) { return (d.YEAR == year) }); // not working?
 
         // Draw gridlines for x axis
         svg.selectAll("line.verticalGrid").data(xScale.ticks()).enter()

@@ -7,7 +7,7 @@ d3.select('#slider').call(
         .on("slide", function(evt, value) {
             d3.select('#slider-year').text(value);
             //d3.select("#viz").remove()
-            d3.select('svg').remove();
+            d3.select('#viz').select('svg').remove();
             renderChart(value);
             console.log("slide event called on " + value);
         })
