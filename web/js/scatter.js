@@ -4,11 +4,10 @@ var margin = {top: 20, right: 20, bottom: 20, left: 50},
 
 /*
  * value accessor - returns the value to encode for a given data object.
- * scale - maps value to a visual display encoding, such as a pixel position.
- * map function - maps from data value to display value
- * axis - sets up axis
+ * scale          - maps value to a visual display encoding, such as a pixel position.
+ * map function   - maps from data value to display value
+ * axis           - sets up axis
  */
-
 
 // setup x
 var xValue = function(d) { return d.FIRSTGEN_DEBT_MDN; },       // data  -> value

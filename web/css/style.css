@@ -26,6 +26,10 @@ body {font-family: 'Droid Sans', sans-serif;}
     fill-opacity: 0.8;
 }
 
+nav a {
+    color: #CA0009
+}
+
 /* Ordinal Categories */
 .public             { fill: #CA0009; }
 .private-nonprofit  { fill: #F1800B; }
