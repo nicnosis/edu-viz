@@ -1,0 +1,78 @@
+# Variables of Interest
+
+### BASIC INFO ###
+
+INSTNM # Institution Name
+CONTROL # control of inst.
+	# 1 = Public
+	# 2 = Private nonprofit
+	# 3 = Private for-profit
+
+UG # All undergraduates
+UGDS # All degree-seeking undergraduates
+
+# Location
+STABBR
+CITY
+ZIP
+LONGITUDE
+LATITUDE
+
+# Classification
+CCBASIC (e.g. research university)
+	15 Research Universities (very high research activity)
+
+# Parents' education
+PAR_ED_PCT_MS # middle school
+PAR_ED_PCT_HS # high school
+PAR_ED_PCT_PS # some form of post-sec
+
+# Percentage first-generation students
+PAR_ED_PCT_1STGEN
+
+# Independent students with family incomes between...
+IND_INC_PCT_M1 # 30,001 - 48,000
+IND_INC_PCT_M2 # 48,001 - 75,000
+IND_INC_PCT_H1 # 75,001 - 110,000
+IND_INC_PCT_H2 # 110,001+
+
+# Family inc 
+IND_INC_AVG # Average family income of independent students in real 2014 dollars. 
+DEP_INC_AVG # Average family income of dependent students in real 2014 dollars.
+
+### DEBT ###
+
+# The median debt for students with family income between
+LO_INC_DEBT_MDN # 0 - 30,000
+MD_INC_DEBT_MDN # 30,001 - 75,000
+HI_INC_DEBT_MDN # 75,001+
+
+# Median debt for dep/ind students
+DEP_DEBT_MDN
+IND_DEBT_MDN
+PELL_DEBT_MDN # lower socio-economic strata. This is generally used as a demographic data point
+NOPELL_DEBT_MDN
+
+FIRSTGEN_DEBT_MDN 	 # The median debt for first-gen
+NOTFIRSTGEN_DEBT_MDN # The median debt for not-first-gen
+
+/***** GLOSSARY ******/
+Independent student
+	https://studentaid.ed.gov/sa/fafsa/filling-out/dependency#dependent-or-independent
+Pell grant
+First-generation student
+Research University
+Three main categories - public non-/for-profit, private
+
+ANNIE 2.1.16
+dataset is no longer confidential
+direct loan program, DoE data, indirect loans, private loans that are not included
+
+Corinthian predatory lending is usually from private loans? Title IV aid
+genesis lending
+90/10 - rule : Proprietary schools are supposed to get no more than 90 % of revenue from title IV
+
+Schools like Apollo targeting veterans
+Try to find reporters who have already done stuff with college scorecard data
+highered, educationweek
+^  Find some of these repoting entities and get more
