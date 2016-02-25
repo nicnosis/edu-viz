@@ -1,0 +1,19 @@
+1. Choose which x and y variables?
+	* Based not on how strong corr is
+	* What is it that your parents would like to see if they are paying for your education??
+	* Do some guesswork -- informal survey
+	* 
+
+2. Button to sort data or hide universities that aren't um
+3. Menu or searchbox with slider can be 
+
+4. Goals for this problect
+	a. Interactive scatter plots - Click circle for university
+	b. Slider -- changes over time
+	c. Some sort of filtering (autocomplete, search box). Compare two or three universities
+	d. Scatter plot put into some kind of composition. It's own title, introduction. Methodology, GitHub links etc. Below the scatterplot, section of highlights -- most interesting finds.
+
+
+Technical part comes first; we need it to explore data
+
+Tech part -> Explore data -> Discover and viz highlights
