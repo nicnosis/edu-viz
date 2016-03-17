@@ -55,4 +55,4 @@ bower_components
 node_modules
 
 # large data
-MERGED2013_PP.csv
+*.csv
