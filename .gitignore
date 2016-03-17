@@ -56,3 +56,4 @@ node_modules
 
 # large data
 *.csv
+*.zip
