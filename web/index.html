@@ -46,7 +46,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a class="nav-link" href="img-pdf/Gantt.png">Gantt Chart<span class="sr-only">(current)</span></a></li>
-                        <li><a class="nav-link" href="img-pdf/WBS">WBS<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="img-pdf/WBS.png">WBS<span class="sr-only">(current)</span></a></li>
                         <li><a class="nav-link" href="img-pdf/budget-breakdown.pdf">Budget<span class="sr-only">(current)</span></a></li>
                         <li><a class="nav-link" href="img-pdf/project-plan-v3.pdf">Proposal<span class="sr-only">(current)</span></a></li>
                         <li><a class="nav-link" href="img-pdf/data-map.pdf">Data Map<span class="sr-only">(current)</span></a></li>
@@ -62,13 +62,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <img class="logo" src="img-pdf/logo.png" />
-                    </div>
-
-                </div>
+            <div>
+                <img class="logo" src="img-pdf/logo.png" />
             </div>
         </div>
     </div>
@@ -80,7 +75,7 @@
             <p>
                 Edu-viz is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
                 The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
-                debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked.
+                debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data from 2013.
             </p>
 
             <h3>Process - Data manipulation</h3>
@@ -92,10 +87,27 @@
                 A detailed <a href="http://jupyter.org/">Jupyter</a> Notebook with code in Python and Bash is available <a href="notebook.html">here.</a> (or click the 'Process' button on the navigation bar)
             </p>
 
-            <h3>What is a Pell Grant?</h3>
+            <hr/>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam amet animi asperiores autem, dolorem exercitationem itaque laboriosam non perferendis perspiciatis quam qui saepe, tempore totam unde voluptatum. Aut, est.</p>
+            <h1>Terms of Importance</h1>
+            <h3>Title IV</h3>
+            <p>
+                Most data from the College Scorecard dataset apply only to <b>Title IV</b> students, or students receiving federal grants or loans. EduViz focuses moreso on grants, a type
+                of financial aid that doesn't need to be repaid. Title IV aid varies in the conditions necessary to receive it - often it is provided on the basis of a student's financial need,
+                or outstanding academic achievements. For the purpose of this project, we will focus on the most relevant form of Title IV aid, the Pell Grant.
+            </p>
 
+            <h3>The Pell Grant</h3>
+            <p>
+                A Pell grant is aid given by the federal government, based on student need. A Pell grant is an entitlement, meaning that it does not have to be paid back by the borrower.
+                Our dataset provides the percentage of students receiving Pell grants for each given university. This can be used as an indicator of how well an institution serves
+                low-income students. Institutions with a high percentage of students receiving Pell grants will better accomodate poorer students.
+            </p>
+            <p>
+                Pell grants are administered by the US Department of Education, who assess information reported on a student's FAFSA (Free Application for Federal Student Aid.)
+                Metrics such as expected family income are used to determine a student's eligibility. Pell grants are generally considered the foundation of a student's
+                financial aid package.
+            </p>
 
         </div>
         <div class="col-md-6"></div>
