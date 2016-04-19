@@ -24,7 +24,7 @@
 <body>
 
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -40,6 +40,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <li><a href="notebook.html">Process<span class="sr-only">(current)</span></a></li>
                 <!--<li><a href="#">Link</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
@@ -58,9 +59,30 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, architecto at blanditiis consequuntur corporis deleniti dolore, expedita harum itaque libero neque numquam quae quas quod reprehenderit sed sequi sint, tempora?</div>
+        <div class="col-md-6">
+            <h1>Introduction</h1>
+            <p>
+                Edu-viz is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
+                The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
+                debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked.
+            </p>
+            <h3>Process - Data manipulation</h3>
+            <p>
+                Due to the immensity and complexity of the dataset, a meticulous approach to data manipulation is required. In the interest of providing full transparency to the process,
+                I have documented every step taken to parse the dataset. This is also done to ensure that other data scientists and developers can reproduce the parsed data and get the same result.
+                The key tools used are <i><a href="https://www.python.org/">Python</a></i>,
+                <i><a href="http://www.grymoire.com/Unix/Sed.html">sed,</a></i> and <i><a href="https://csvkit.readthedocs.org/en/0.9.1/">csvkit</a></i>.
+                A detailed <a href="http://jupyter.org/">Jupyter</a> Notebook with code in Python and Bash is available <a href="notebook.html">here.</a> (or click the 'Process' button on the navigation bar)
+            </p>
+
+            <h2>What is a Pell Grant?</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam amet animi asperiores autem, dolorem exercitationem itaque laboriosam non perferendis perspiciatis quam qui saepe, tempore totam unde voluptatum. Aut, est.</p>
+
+
+        </div>
         <div class="col-md-6"></div>
     </div>
 </div>
