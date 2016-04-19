@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>nic-clean-Copy1</title>
+<title>Data Parsing Process</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -144,8 +144,10 @@ div#notebook {
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
 <link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
-<!-- Loading mathjax macro -->
+
+    <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
@@ -168,6 +170,43 @@ div#notebook {
     </script>
     <!-- End of mathjax configuration --></head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">edu-Viz</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="notebook.html">Process<span class="sr-only">(current)</span></a></li>
+                <!--<li><a href="#">Link</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="nav-link" href="img-pdf/Gantt.png">Gantt Chart<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="img-pdf/WBS">WBS<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="img-pdf/budget-breakdown.pdf">Budget<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="img-pdf/project-plan-v3.pdf">Proposal<span class="sr-only">(current)</span></a></li>
+                        <li><a class="nav-link" href="img-pdf/data-map.pdf">Data Map<span class="sr-only">(current)</span></a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
@@ -808,7 +847,7 @@ sed '1d' */school* &gt;&gt; school.csv # skips the header row for each file and 
 </div>
 </div>
 </div>
-    </div>
+    <!--</div>-->
   </div>
 </body>
 </html>
