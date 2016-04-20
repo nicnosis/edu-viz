@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="Nicolas Aguirre, ProPublica">
-    <link rel="icon" href="docs/favicon.ico">
+    <meta name="author" content="Nicolas Aguirre">
+    <link rel="icon" href="favicon.ico">
 
     <title>eduViz</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -33,7 +33,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="edu-brand" href="#">edu-Viz</a>
+            <a class="navbar-brand" id="edu-brand" href="#">eduViz</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,16 +90,22 @@
             <hr/>
 
             <h1>Terms of Importance</h1>
+            <p>
+                Before diving into the data, it is useful to understand certain terms as they relate to higher education.
+                It is particularly important to understand terms related to lending practices. Recently, many institutions' lending practices have been called into question,
+                and much controversy arises on the subjects of tuition, loans and grants.
+            </p>
+
             <h3>Title IV</h3>
             <p>
-                Most data from the College Scorecard dataset apply only to <b>Title IV</b> students, or students receiving federal grants or loans. EduViz focuses moreso on grants, a type
+                Most data from the College Scorecard dataset apply only to <b><a href="http://federalstudentaid.ed.gov/site/front2back/programs/programs/fb_03_01_0030.htm">Title IV</a></b> students, or students receiving federal grants or loans. EduViz focuses moreso on grants, a type
                 of financial aid that doesn't need to be repaid. Title IV aid varies in the conditions necessary to receive it - often it is provided on the basis of a student's financial need,
                 or outstanding academic achievements. For the purpose of this project, we will focus on the most relevant form of Title IV aid, the Pell Grant.
             </p>
 
             <h3>The Pell Grant</h3>
             <p>
-                A Pell grant is aid given by the federal government, based on student need. A Pell grant is an entitlement, meaning that it does not have to be paid back by the borrower.
+                A <a href="https://studentaid.ed.gov/sa/types/grants-scholarships/pell">Pell grant</a> is aid given by the federal government, based on student need. A Pell grant is an entitlement, meaning that it does not have to be paid back by the borrower.
                 Our dataset provides the percentage of students receiving Pell grants for each given university. This can be used as an indicator of how well an institution serves
                 low-income students. Institutions with a high percentage of students receiving Pell grants will better accomodate poorer students.
             </p>
@@ -109,8 +115,19 @@
                 financial aid package.
             </p>
 
+            <h3>Public, Private, and For-Profit Schools</h3>
+            <p>
+                One of the focuses of this visualization project is to understand differences between public and private universities.
+                The key difference is that public universities are funded by state governments, whereas private universities don't receive any state funding.
+                Public universities generally offer lower tuition rates because they are subsidized, while private universities rely on higher tuition rates and
+                generous private contributions to cover operating costs.
+            </p>
+            <p>
+                Private schools exist as either <i>non-</i>profit or <i>for-</i>profit institutions. For-profit schools are operated privately by profit-seeking businesses.
+                While for-profit schools are thought to fulfill an economic need of education, they are frequently criticized for their lending practices, tuition costs, and
+                dismal student outcomes. 
+            </p>
         </div>
-        <div class="col-md-6"></div>
     </div>
 </div>
 
