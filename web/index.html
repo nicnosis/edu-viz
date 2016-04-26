@@ -101,7 +101,7 @@
             <p>
                 Most data from the College Scorecard dataset apply only to <b><a href="http://federalstudentaid.ed.gov/site/front2back/programs/programs/fb_03_01_0030.htm">Title IV</a></b> students, or students receiving federal grants or loans. EduViz focuses moreso on grants, a type
                 of financial aid that doesn't need to be repaid. Title IV aid varies in the conditions necessary to receive it - often it is provided on the basis of a student's financial need,
-                or outstanding academic achievements. For the purpose of this project, we will focus on the most relevant form of Title IV aid, the Pell Grant.
+                or outstanding academic achievements. For the purpose of this project, analysis will focus on the most relevant form of Title IV aid, the Pell Grant.
             </p>
 
             <h3>The Pell Grant</h3>
@@ -164,12 +164,17 @@
             </p>
             <p>
                 In order to decide whether or not a given institution provides students with favorable outcomes, one must compare the cost
-                of education with the outcome. We will use cost and earnings metrics to determine this.
+                of education with the outcome. Analysis will use cost and earnings metrics to determine this.
 
                 Of key importance are:
                 <ul>
                     <li>
-                        <strong>Median earnings 10 years after matriculation</strong> - Median student earnings for all federally aided
+                        <strong>Median cost of attendance - </strong> This is a more reliable metric than using tuition;
+                        the College Scorecard includes this variable, which gives average annual cost of attendance, accounting for tuition, fees,
+                        books, supplies, and living expenses.
+                    </li>
+                    <li>
+                        <strong>Median earnings 10 years after matriculation - </strong> Median student earnings for all federally aided
                         students who are employed, but not enrolled.
                     </li>
                     <li>
@@ -178,11 +183,22 @@
                         by College Scorecard because it represents the median wage of workers ages 25 to 34 with only a high-school education.
                     </li>
                     <li>
-                        <strong>Cost to earnings ratio - </strong> This metric is calculated by dividing median earnings by average cost of attendance.
+                        <strong>Earnings-to-cost ratio - </strong> This metric is calculated by dividing median earnings by average cost of attendance.
+                        Other things equal, a higher earnings-to-cost ratio suggests that the school succeeds in providing marketable skills for its
+                        tuition. In theory, schools with an earnings-to-cost ratio lower than 1.0 suggest that the education
+                        does not yield sufficient returns to justify the cost.
                     </li>
                 </ul>
-
             </p>
+
+            <h3>Cost and Earnings</h3>
+            <p>
+                Comparing cost and earnings is a good place to start. While there are some limitations with
+                the earnings data, the aggregate figures can give us a good insight as to overall market
+                trends.
+            </p>
+            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Costvsearnings&#47;story2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Costvsearnings&#47;story2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Costvsearnings&#47;story2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+            
         </div>
     </div>
 
