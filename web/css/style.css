@@ -1,21 +1,33 @@
-body {
-  font-size: 16px;
-  line-height: 1.55;
-  font-family: "PT sans";
+#blue = #3675B7,
+body,
+p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
 }
 a {
-  color: #c9302c;
+  color: #c25400;
 }
 ul.var-list li {
   padding-top: 10px;
   list-style-type: square;
 }
 h1 {
-  border-bottom: 2px solid #7a1705;
+  font-size: 32px;
+  border-bottom: 2px solid #c25400;
+}
+h3 {
+  font-size: 24px;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
 }
 /* Nav and logo stuff */
 #edu-brand {
-  color: #7a1705;
+  color: #c25400;
 }
 .logo {
   float: left;

@@ -56,6 +56,48 @@ NOPELL_DEBT_MDN
 FIRSTGEN_DEBT_MDN 	 # The median debt for first-gen
 NOTFIRSTGEN_DEBT_MDN # The median debt for not-first-gen
 
+### DEGREES AWARDED ###
+
+PCIP01,"Percentage of degrees awarded in Agriculture, Agriculture Operations, And Related Sciences.",academics
+PCIP03,Percentage of degrees awarded in Natural Resources And Conservation.,academics
+PCIP04,Percentage of degrees awarded in Architecture And Related Services.,academics
+PCIP05,"Percentage of degrees awarded in Area, Ethnic, Cultural, Gender, And Group Studies.",academics
+PCIP09,"Percentage of degrees awarded in Communication, Journalism, And Related Programs.",academics
+PCIP10,Percentage of degrees awarded in Communications Technologies/Technicians And Support Services.,academics
+PCIP11,Percentage of degrees awarded in Computer And Information Sciences And Support Services.,academics
+PCIP12,Percentage of degrees awarded in Personal And Culinary Services.,academics
+PCIP13,Percentage of degrees awarded in Education.,academics
+PCIP14,Percentage of degrees awarded in Engineering.,academics
+PCIP15,Percentage of degrees awarded in Engineering Technologies And Engineering-Related Fields.,academics
+PCIP16,"Percentage of degrees awarded in Foreign Languages, Literatures, And Linguistics.",academics
+PCIP19,Percentage of degrees awarded in Family And Consumer Sciences/Human Sciences.,academics
+PCIP22,Percentage of degrees awarded in Legal Professions And Studies.,academics
+PCIP23,Percentage of degrees awarded in English Language And Literature/Letters.,academics
+PCIP24,"Percentage of degrees awarded in Liberal Arts And Sciences, General Studies And Humanities.",academics
+PCIP25,Percentage of degrees awarded in Library Science.,academics
+PCIP26,Percentage of degrees awarded in Biological And Biomedical Sciences.,academics
+PCIP27,Percentage of degrees awarded in Mathematics And Statistics.,academics
+PCIP29,Percentage of degrees awarded in Military Technologies And Applied Sciences.,academics
+PCIP30,Percentage of degrees awarded in Multi/Interdisciplinary Studies.,academics
+PCIP31,"Percentage of degrees awarded in Parks, Recreation, Leisure, And Fitness Studies.",academics
+PCIP38,Percentage of degrees awarded in Philosophy And Religious Studies.,academics
+PCIP39,Percentage of degrees awarded in Theology And Religious Vocations.,academics
+PCIP40,Percentage of degrees awarded in Physical Sciences.,academics
+PCIP41,Percentage of degrees awarded in Science Technologies/Technicians.,academics
+PCIP42,Percentage of degrees awarded in Psychology.,academics
+PCIP43,"Percentage of degrees awarded in Homeland Security, Law Enforcement, Firefighting And Related Protective Services.",academics
+PCIP44,Percentage of degrees awarded in Public Administration And Social Service Professions.,academics
+PCIP45,Percentage of degrees awarded in Social Sciences.,academics
+PCIP46,Percentage of degrees awarded in Construction Trades.,academics
+PCIP47,Percentage of degrees awarded in Mechanic And Repair Technologies/Technicians.,academics
+PCIP48,Percentage of degrees awarded in Precision Production.,academics
+PCIP49,Percentage of degrees awarded in Transportation And Materials Moving.,academics
+PCIP50,Percentage of degrees awarded in Visual And Performing Arts.,academics
+PCIP51,Percentage of degrees awarded in Health Professions And Related Programs.,academics
+PCIP52,"Percentage of degrees awarded in Business, Management, Marketing, And Related Support Services.",academics
+PCIP54,Percentage of degrees awarded in History.,academics
+
+
 /***** GLOSSARY ******/
 Independent student
 	https://studentaid.ed.gov/sa/fafsa/filling-out/dependency#dependent-or-independent

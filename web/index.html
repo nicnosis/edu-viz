@@ -12,9 +12,7 @@
     <title>eduViz</title>
 
     <!-- Google Font -->
-    <!--<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>-->
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -72,11 +70,22 @@
 
     <div class="row">
         <div class="col-md-12">
+            <!-- INTRO -->
             <h1>Introduction</h1>
+            <h3>What is eduViz?</h3>
             <p>
-                Edu-viz is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
+                <b>eduViz</b> is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
                 The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
-                debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data from 2013.
+                debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data
+                from 2013.
+            </p>
+            <p>
+                This analysis is designed for data scientists, analysts, and others with statistical literacy.
+                Others looking to create data graphics, articles, or more focused analyses will find this project useful.
+                In particular, members of the <a href="https://www.kaggle.com/kaggle/college-scorecard/scripts">Kaggle</a> community
+                can benefit from it.
+                An effort is made to ensure that the analysis is replicable and transparent for others.
+                While analysis is thorough and focuses on many variables, it is by no means exhaustive.
             </p>
 
             <h3>Process - Data manipulation</h3>
@@ -90,6 +99,7 @@
 
             <hr/>
 
+            <!-- TERMS -->
             <h1>Terms of Importance</h1>
             <p>
                 Before diving into the data, it is useful to understand certain terms as they relate to higher education.
@@ -136,8 +146,74 @@
                 certain schools are meeting their standards; these external orgnizations will determine whether or not a school is given
                 its 'accredited' status.
             </p>
+        </div>
+    </div>
 
-            <hr />
+    <!-- TAKEAWAYS -->
+    <div class="row">
+        <hr />
+        <div class="col-md-12">
+
+            <h1>Takeaways</h1>
+            <ul>
+                <li>
+                    public schools are well funded, good investments
+                </li>
+                <li>
+                    Schools with less diversity generally have lower completion rates and earnings
+                </li>
+                <li>
+                    A high-cost of education does not necessarily guarantee good earnings.
+                    Private schools that focus on providing educations in art, music, or other non-STEM
+                    degrees can provide dismally-low earnings compared to their cost.
+                </li>
+                <li>
+                    For-profit private schools receive a large amount of federal funding, and don't always
+                    provide students with viable occupational outcomes.
+                    <a href="https://www.propublica.org/article/head-of-accreditor-for-for-profit-colleges-leaves-amid-growing-scrutiny">Recent events</a> raise suspicion about the quality and ethical practices of
+                    for-profit schools.
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- YOUR SCHOOL -->
+    <div class="row">
+        <hr />
+        <div class="col-md-12">
+
+            <h1>Your School at a Glance</h1>
+            <ul>
+                <li>
+                    admission
+                </li>
+                <li>
+                    completion
+                </li>
+                <li>
+                    revenue
+                </li>
+                <li>
+                    facsal
+                </li>
+
+                racial diversity
+
+                accessibility
+                cost
+
+                percentiles?
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- STORY 1 -->
+    <div class="row">
+        <hr />
+        <div class="col-md-12">
 
             <h1>How Colleges Spend Money</h1>
             <p>
@@ -146,7 +222,8 @@
                 and the caliber of teaching faculty they strive to maintain.
             </p>
 
-            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1100px; height: 1129px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1129' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='eduviz_1&#47;story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>    </div>
+            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1129px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1129' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='eduviz_1&#47;story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+        </div>
     </div>
 
     <!-- Cost -->
@@ -167,28 +244,28 @@
                 of education with the outcome. Analysis will use cost and earnings metrics to determine this.
 
                 Of key importance are:
-                <ul class="var-list">
-                    <li>
-                        <strong>Median cost of attendance - </strong> This is a more reliable metric than using tuition;
-                        the College Scorecard includes this variable, which gives average annual cost of attendance, accounting for tuition, fees,
-                        books, supplies, and living expenses.
-                    </li>
-                    <li>
-                        <strong>Median earnings 10 years after matriculation - </strong> Median student earnings for all federally aided
-                        students who are employed, but not enrolled.
-                    </li>
-                    <li>
-                        <strong>Threshold earnings - </strong> These variables provide us with the share of students who earn more than a certain amount.
-                        For instance, one might examine the share of students who make greater than $25,000 a year. The threshold of $25,000 was chosen
-                        by College Scorecard because it represents the median wage of workers ages 25 to 34 with only a high-school education.
-                    </li>
-                    <li>
-                        <strong>Earnings-to-cost ratio - </strong> This metric is calculated by dividing median earnings by average cost of attendance.
-                        Other things equal, a higher earnings-to-cost ratio suggests that the school succeeds in providing marketable skills for its
-                        tuition. In theory, schools with an earnings-to-cost ratio lower than 1.0 suggest that the education
-                        does not yield sufficient returns to justify the cost.
-                    </li>
-                </ul>
+            <ul class="var-list">
+                <li>
+                    <strong>Median cost of attendance - </strong> This is a more reliable metric than using tuition;
+                    the College Scorecard includes this variable, which gives average annual cost of attendance, accounting for tuition, fees,
+                    books, supplies, and living expenses.
+                </li>
+                <li>
+                    <strong>Median earnings 10 years after matriculation - </strong> Median student earnings for all federally aided
+                    students who are employed, but not enrolled.
+                </li>
+                <li>
+                    <strong>Threshold earnings - </strong> These variables provide us with the share of students who earn more than a certain amount.
+                    For instance, one might examine the share of students who make greater than $25,000 a year. The threshold of $25,000 was chosen
+                    by College Scorecard because it represents the median wage of workers ages 25 to 34 with only a high-school education.
+                </li>
+                <li>
+                    <strong>Earnings-to-cost ratio - </strong> This metric is calculated by dividing median earnings by average cost of attendance.
+                    Other things equal, a higher earnings-to-cost ratio suggests that the school succeeds in providing marketable skills for its
+                    tuition. In theory, schools with an earnings-to-cost ratio lower than 1.0 suggest that the education
+                    does not yield sufficient returns to justify the cost.
+                </li>
+            </ul>
             </p>
 
             <h3>Cost and Earnings</h3>
@@ -245,21 +322,20 @@
 
             <h3>Race: High-level Overview</h3>
 
-            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Demographics_control&#47;story_3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
-
+            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Demographics_control&#47;story_3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
             <hr/>
 
             <h3>Race: Admission and Completion</h3>
 
             <p>
                 Many of the most prestigious and costly universities also have high completion rates.
-                However, these schools are often very homogenous (caucasian) and lack racial diversity.
+                However, these schools are often very homogenous (Caucasian) and lack racial diversity.
                 One finding of this data exploration is that schools with greater diversity have lower completion rates.
                 It isn't feasible to draw a causal link with this information, but lower completion rates in more diverse
                 schools suggest that ethnic minorities may not have the same opportunities.
             </p>
 
-            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='adm_quart ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;adm_quart&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='AdmissionCompletionbyRace&#47;adm_quart' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;adm_quart&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='AdmissionCompletionbyRace&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
         </div>
     </div>
 
