@@ -1,13 +1,21 @@
 $red = #C25400
 $indigo = #595959
-#blue = #3675B7
+$blue = #3675B7
 
+$headingColor = #323b43
+$bodyColor = #4b5359
 
-
-body, p
-  font-family: Verdana,Geneva,sans-serif;
-  font-size 18px
+#eduviz > div > div:nth-child(1)
+  font-family: 'Open Sans', sans-serif;
+  font-size 16px
   line-height 1.5
+  color $bodyColor
+
+#eduviz > div.container
+  font-family: 'Open Sans', sans-serif;
+  font-size 16px
+  line-height 27px
+  color $bodyColor
 
 a
   color #c25400
@@ -17,16 +25,22 @@ ul.var-list li
   list-style-type: square;
 
 h1
+  text-align: center
+  color $headingColor
   font-size 32px
   border-bottom 2px solid $red
+  letter-spacing: 3px
 
 h3
+  font-weight: 600
+  color $headingColor
   font-size 24px
+  margin-bottom 20px
 
-h1, h2, h3
+h1
   //font-family 'Dosis', sans-serif
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 2px
+
 
 /* Nav and logo stuff */
 #edu-brand
