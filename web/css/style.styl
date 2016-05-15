@@ -20,9 +20,30 @@ $bodyColor = #4b5359
 a
   color #c25400
 
-ul.var-list li
-  padding-top: 10px
-  list-style-type: square;
+ul.list
+  padding-left 0
+  list-style-position outside
+  list-style: none
+
+  li
+    margin-top 15px
+    margin-left 25px
+    position relative
+
+  li::before {
+    content: " ";
+    color: rgba(62,62,71,0.8);
+    line-height: 1.5;
+    background-color: rgba(62,62,71,0.8);
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;  
+  }
+
 
 h1
   text-align: center
