@@ -24,11 +24,14 @@ if (!("ontouchstart" in window)) {
         event.preventDefault();
 
         $(href).velocity("scroll", { offset: -(8), complete: function() {
+            
+            
             $(this).attr("id", "");
             
-            window.location.hash = href.substr(0); // should these be 0 or 1?
-            $(this).attr("id", href.substr(0));
+            window.location.hash = href.substr(1); // should these be 0 or 1?
+            $(this).attr("id", href.substr(1));
 
+            console.log("Velocity scroll complete.");
         }});
     });
 
