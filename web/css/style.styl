@@ -20,13 +20,34 @@ $bodyColor = #41484d
 a
   color #c25400
 
+span.idTag
+  visibility none
+
 /*** FOR LISTS ***/
-#glossary {
+#glossary
+  display:none; /* assume smaller screen first */
+
   position: fixed;
   top: 3.85rem;
-  left: 50%;
-  margin-left: 29em;
+  right: 50%;
+  margin-right: 30em;
   opacity: 0.95;
+
+
+  li
+    font-size 12px
+
+    a:hover
+      text-decoration: none;
+
+
+
+
+/* if screen size gets wider than specified width  */
+@media screen and (min-width:1024px){
+  #glossary {
+    display:block;
+  }
 }
 
 ul
