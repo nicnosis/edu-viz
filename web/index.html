@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+
+    <title>eduViz</title>
+    <meta name="description" content="Tableau-based visualization of the Department of Education's College Scorecard Data">
     <meta name="author" content="Nicolas Aguirre">
     <link rel="icon" href="favicon.ico">
 
-    <title>eduViz</title>
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -24,10 +25,9 @@
 <body id="eduviz">
 
 
-
+<!--
 <nav class="navbar navbar-default">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -38,12 +38,10 @@
             <a class="navbar-brand" id="edu-brand" href="#">eduViz</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
                 <li><a href="notebook.html">Process<span class="sr-only">(current)</span></a></li>
-                <!--<li><a href="#">Link</a></li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -52,16 +50,15 @@
                         <li><a class="nav-link" href="img-pdf/budget-breakdown.pdf">Budget<span class="sr-only">(current)</span></a></li>
                         <li><a class="nav-link" href="img-pdf/project-plan-v3.pdf">Proposal<span class="sr-only">(current)</span></a></li>
                         <li><a class="nav-link" href="img-pdf/data-map.pdf">Data Map<span class="sr-only">(current)</span></a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
                     </ul>
                 </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+    </div>
 </nav>
+-->
 
-<div class="container">
+<div class="container" id="content">
     <div class="row">
         <div class="col-md-6">
             <div>
@@ -73,7 +70,7 @@
     <div class="row">
         <div class="col-md-12">
             <!-- INTRO -->
-            <h1>Introduction</h1>
+            <h1 id="h-intro">Introduction</h1>
             <h3>What is eduViz?</h3>
             <p>
                 <b>eduViz</b> is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
@@ -102,7 +99,7 @@
             <hr/>
 
             <!-- TERMS -->
-            <h1>Terms of Importance</h1>
+            <h1 id="h-terms">Terms of Importance</h1>
             <p>
                 Before diving into the data, it is useful to understand certain terms as they relate to higher education.
                 It is particularly important to understand terms related to lending practices. Recently, many institutions' lending practices have been called into question,
@@ -156,7 +153,7 @@
         <hr />
         <div class="col-md-12">
 
-            <h1>Takeaways</h1>
+            <h1 id="h-takeaways">Takeaways</h1>
             <ul class="list">
                 <li>
                     public schools are well funded, good investments
@@ -186,7 +183,7 @@
         <hr />
         <div class="col-md-12">
 
-            <h1>Your School at a Glance</h1>
+            <h1 id="h-yourschool">Your School at a Glance</h1>
             <ul class="list">
                 <li>
                     admission
@@ -217,7 +214,7 @@
         <hr />
         <div class="col-md-12">
 
-            <h1>How Colleges Spend Money</h1>
+            <h1 id="h-spending">How Colleges Spend Money</h1>
             <p>
                 In order to hold an institution accountable for lending practices, and maintaining standards of accessibility and affordability, it is helpful to understand where universities get their money.
                 These diagrams detail <strong>tuition revenue per full-time student</strong> and <strong>average monthly faculty salary.</strong> These metrics provide a proxy for how universities source their revenue,
@@ -232,7 +229,7 @@
     <div class="row">
         <hr />
         <div class="col-md-12">
-            <h1>Is College Worth It?</h1>
+            <h1 id="h-earning">Is College Worth It?</h1>
             <p>
                 Amidst stagnant economic growth and a precarious job market, many question whether or not a college-level education
                 is worth having. The dataset provides some useful metrics in evaluating outcomes from these institutions.
@@ -285,7 +282,7 @@
     <div class="row">
         <hr />
         <div class="col-md-12">
-            <h1>Demographics</h1>
+            <h1 id="h-demographics">Demographics</h1>
             <p>
                 The dataset gives us a generous array of variables with which to examine demographics.
                 With these variables, we can paint a broad picture of what higher-education student population
@@ -323,12 +320,10 @@
             <hr />
 
             <h3>Race: High-level Overview</h3>
-
             <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Demographics_control&#47;story_3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
             <hr/>
 
             <h3>Race: Admission and Completion</h3>
-
             <p>
                 Many of the most prestigious and costly universities also have high completion rates.
                 However, these schools are often very homogenous (Caucasian) and lack racial diversity.
@@ -346,25 +341,24 @@
         <hr />
         <div class="col-md-12">
             <div class="row">
-                <h1>Style Guide</h1>
+                <h1 id="h-styleguide">Style Guide</h1>
                 <div class="col-md-6 col-small-12">
                     <img src="img-pdf/style.png"></p>
                 </div>
                 <div class="col-md-6 col-small-12">
-
                     <p>
                         In constructing a web-based visualization, it is often useful to have a style guide.
                         Although creating a style guide can be time-intensive, it ultimately saves a great deal of time
                         deliberating over small details such as fonts, colors, alignment and overall aesthetics.
                     </p>
-
                     <p>
-                        Color-blind accessibility and readability are critical. The use of style and aesthetics in
+                        Color-blind accessibility and readability are critical for visualizations featuring color
+                        as a functional dimension.
+                        The use of style and aesthetics in
                         visualizations is not only for visual appeal; it serves the function of making information
                         more accessible and digestible to readers. My colors are derived from Tableau's
                         <i>Color Blind 10</i> palette.
                     </p>
-
                     <p>
                         The main fonts, <a href="https://www.google.com/fonts/specimen/Open+Sans">Open Sans</a> and <a href="https://www.google.com/fonts/specimen/Montserrat"> Montserrat</a>
                         are freely available from Google Fonts.
@@ -375,11 +369,14 @@
     </div>
 
 
-    <!-- Bootstrap core JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-</div>
+    <!-- For UI effects-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+    <script src="js/animate-glossary.js"></script>
 
+</div>
 </body>
 </html>
