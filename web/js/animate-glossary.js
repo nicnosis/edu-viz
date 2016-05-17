@@ -21,7 +21,7 @@ if (!("ontouchstart" in window)) {
         var name = $(this).attr("href");
         event.preventDefault();
 
-        $(name).velocity("scroll", { offset: -(navHeight + 8), complete: function() {
+        $(name).velocity("scroll", { offset: -(8), complete: function() {
             $(this).attr("id", "");
             window.location.hash = name.substr(1);
             $(this).attr("id", name.substr(1));
@@ -30,17 +30,18 @@ if (!("ontouchstart" in window)) {
 
     var section,
         sections = {},
-        $contentPanes = $("#documentation > li[id]"),
+        $contentPanes = $("#documentation > li[id]"), // #documentation is a <ul>
         $oldBest;
 
     $contentPanes.each(function(){
         var $this = $(this),
-            words = $this.find(".dataHeaderTitle").text().split(":");
+            // words = $this.find(".dataHeaderTitle").text().split(":");
+            anchor = $this.find("h1").text();
 
-        if (words.length === 2) {
-            sections[words[0]] = sections[words[0]] || [];
-            sections[words[0]].push([ $this.attr("id"), words[1] ]);
-        }
+
+        // sections[words[0]] = sections[words[0]] || [];
+        sections[anchor].push([ $this.attr("id"), anchor ]);
+
     });
 
     for (var i in sections) {
@@ -48,7 +49,7 @@ if (!("ontouchstart" in window)) {
         var $section = $("<ul></ul>").appendTo($glossary.append("<b>" + i + "</b>"));
 
         for (var j = 0; j < section.length; j++) {
-            $section.append("<li><a href=\"#" + section[j][0] + "\">" + section[j][1] + "</a></li>");
+            $section.append("<li><a href=\"#" + section[j][0] + "\">" + section[j][0] + "</a></li>");
         }
     }
 

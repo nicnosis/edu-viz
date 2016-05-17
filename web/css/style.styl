@@ -20,29 +20,33 @@ $bodyColor = #41484d
 a
   color #c25400
 
-ul.list
+/*** FOR LISTS ***/
+ul
+  list-style: none
+
+ul.diamonds
   padding-left 0
   list-style-position outside
   list-style: none
 
-  li
-    margin-top 15px
-    margin-left 25px
-    position relative
+.diamonds li
+  margin-top 15px
+  margin-left 25px
+  position relative
 
-  li::before {
-    content: " ";
-    color: rgba(62,62,71,0.8);
-    line-height: 1.5;
-    background-color: rgba(62,62,71,0.8);
-    width: 7px;
-    height: 7px;
-    position: absolute;
-    left: -20px;
-    top: 10px;
-    transform: rotate(45deg);
-    transform-origin: 50% 50%;
-  }
+.diamonds li::before {
+  content: " ";
+  color: rgba(62,62,71,0.8);
+  line-height: 1.5;
+  background-color: rgba(62,62,71,0.8);
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+}
 
 
 h1

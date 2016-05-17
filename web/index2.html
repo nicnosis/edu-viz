@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>eduViz</title>
+    <meta name="description" content="Tableau-based visualization of the Department of Education's College Scorecard Data">
+    <meta name="author" content="Nicolas Aguirre">
+    <link rel="icon" href="favicon.ico">
+
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body id="eduviz">
+
+<div class="container" id="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <img class="logo" src="img-pdf/logo.png" />
+            </div>
+        </div>
+    </div>
+
+    <ul id="main-content">
+        <!-- INTRO -->
+        <li id="intro">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contentHeader"> Introduction </h1>
+                    <div class="contentBody">
+                        <h3>What is eduViz?</h3>
+                        <p>
+                            <b>eduViz</b> is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
+                            The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
+                            debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data
+                            from 2013.
+                        </p>
+                        <p>
+                            This analysis is designed for data scientists, analysts, and others with statistical literacy.
+                            Others looking to create data graphics, articles, or more focused analyses will find this project useful.
+                            In particular, members of the <a href="https://www.kaggle.com/kaggle/college-scorecard/scripts">Kaggle</a> community
+                            can benefit from it.
+                            An effort is made to ensure that the analysis is replicable and transparent for others.
+                            While analysis is thorough and focuses on many variables, it is by no means exhaustive.
+                        </p>
+
+                        <h3>Process - Data manipulation</h3>
+                        <p>
+                            Due to the immensity and complexity of the dataset, a meticulous approach to data manipulation is required. In the interest of providing full transparency to the process,
+                            I have documented every step taken to parse the dataset. This is also done to ensure that other data scientists and developers can reproduce the parsed data and get the same result.
+                            The key tools used are <i><a href="https://www.python.org/">Python</a></i>,
+                            <i><a href="http://www.grymoire.com/Unix/Sed.html">sed,</a></i> and <i><a href="https://csvkit.readthedocs.org/en/0.9.1/">csvkit</a></i>.
+                            A detailed <a href="http://jupyter.org/">Jupyter</a> Notebook with code in Python and Bash is available <a href="notebook.html">here.</a> (or click the 'Process' button on the navigation bar)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- TERMS -->
+        <li id="terms">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contentHeader"> Terms of Importance </h1>
+                    <div class="contentBody">
+                        <p>
+                            Before diving into the data, it is useful to understand certain terms as they relate to higher education.
+                            It is particularly important to understand terms related to lending practices. Recently, many institutions' lending practices have been called into question,
+                            and much controversy arises on the subjects of tuition, loans and grants.
+                        </p>
+
+                        <h3>Title IV</h3>
+                        <p>
+                            Most data from the College Scorecard dataset apply only to <b><a href="http://federalstudentaid.ed.gov/site/front2back/programs/programs/fb_03_01_0030.htm">Title IV</a></b> students, or students receiving federal grants or loans. EduViz focuses moreso on grants, a type
+                            of financial aid that doesn't need to be repaid. Title IV aid varies in the conditions necessary to receive it - often it is provided on the basis of a student's financial need,
+                            or outstanding academic achievements. For the purpose of this project, analysis will focus on the most relevant form of Title IV aid, the Pell Grant.
+                        </p>
+
+                        <h3>The Pell Grant</h3>
+                        <p>
+                            A <a href="https://studentaid.ed.gov/sa/types/grants-scholarships/pell">Pell grant</a> is aid given by the federal government, based on student need. A Pell grant is an entitlement, meaning that it does not have to be paid back by the borrower.
+                            Our dataset provides the percentage of students receiving Pell grants for each given university. This can be used as an indicator of how well an institution serves
+                            low-income students. Institutions with a high percentage of students receiving Pell grants will better accomodate poorer students.
+                        </p>
+                        <p>
+                            Pell grants are administered by the US Department of Education, who assess information reported on a student's FAFSA (Free Application for Federal Student Aid.)
+                            Metrics such as expected family income are used to determine a student's eligibility. Pell grants are generally considered the foundation of a student's
+                            financial aid package. These visualizations may use the variable <strong>PctPell</strong> to describe the percent of students receiving Pell grants at an institution.
+                        </p>
+
+                        <h3>Public, Private, and For-Profit Schools</h3>
+                        <p>
+                            One of the focuses of this visualization project is to understand differences between public and private universities.
+                            The key difference is that public universities are funded by state governments, whereas private universities don't receive any state funding.
+                            Public universities generally offer lower tuition rates because they are subsidized, while private universities rely on higher tuition rates and
+                            generous private contributions to cover operating costs.
+                        </p>
+                        <p>
+                            Private schools exist as either <i>non-</i>profit or <i>for-</i>profit institutions. For-profit schools are operated privately by profit-seeking businesses.
+                            While for-profit schools are thought to fulfill an economic need of education, they are frequently criticized for their lending practices, tuition costs, and
+                            dismal student outcomes. In the dataset, the type of institution may be referred to as <strong>Control</strong>.
+                        </p>
+
+                        <h3>Accreditation</h3>
+                        <p>
+                            An accredited school is one recognized as meeting standards of education, admission, and student outcomes.
+                            The aim is to ensure that schools maintain a quality level of education. Accrediting agencies exist to determine how well
+                            certain schools are meeting their standards; these external orgnizations will determine whether or not a school is given
+                            its 'accredited' status.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- TAKEAWAYS -->
+        <li id="takeaways">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contentHeader"> Takeaways </h1>
+                    <div class="contentBody">
+                        <ul class="diamonds">
+                            <li>
+                                public schools are well funded, good investments
+                            </li>
+                            <li>
+                                Schools with less diversity generally have lower completion rates and earnings
+                            </li>
+                            <li>
+                                A high-cost of education does not necessarily guarantee good earnings.
+                                Private schools that focus on providing educations in art, music, or other non-STEM
+                                degrees can provide dismally-low earnings compared to their cost.
+                            </li>
+                            <li>
+                                For-profit private schools receive a large amount of federal funding, and don't always
+                                provide students with viable occupational outcomes.
+                                <a href="https://www.propublica.org/article/head-of-accreditor-for-for-profit-colleges-leaves-amid-growing-scrutiny">Recent events</a> raise suspicion about the quality and ethical practices of
+                                for-profit schools.
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <!-- YOUR SCHOOL -->
+        <li id="your-school">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h1 class="contentHeader"> Your School at a Glance</h1>
+                    <div class="contentBody">
+                        <ul class="diamonds">
+                            <li>
+                                admission
+                            </li>
+                            <li>
+                                completion
+                            </li>
+                            <li>
+                                revenue
+                            </li>
+                            <li>
+                                facsal
+                            </li>
+
+                            racial diversity
+
+                            accessibility
+                            cost
+
+                            percentiles?
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <!-- STORY 1 -->
+        <li id="spending">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h1 class="contentHeader">How Colleges Spend Money</h1>
+                    <div class="contentBody">
+                        <p>
+                            In order to hold an institution accountable for lending practices, and maintaining standards of accessibility and affordability, it is helpful to understand where universities get their money.
+                            These diagrams detail <strong>tuition revenue per full-time student</strong> and <strong>average monthly faculty salary.</strong> These metrics provide a proxy for how universities source their revenue,
+                            and the caliber of teaching faculty they strive to maintain.
+                        </p>
+                        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1129px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1129' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='eduviz_1&#47;story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+                    </div>
+
+                </div>
+            </div>
+        </li>
+
+        <li id="cost">
+            <!-- Cost -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contentHeader">Is College Worth It?</h1>
+                    <div class="contentBody">
+                        <p>
+                            Amidst stagnant economic growth and a precarious job market, many question whether or not a college-level education
+                            is worth having. The dataset provides some useful metrics in evaluating outcomes from these institutions.
+                            Earnings data exists is provided in numerous forms. Important to note is that
+                            these figures are taken from 2011, the most recent years in which earnings were reported.
+                            Because these are 10 year cohort groups, the numbers correspond to the group of students who enrolled from 2001-2002.
+
+                        </p>
+                        <p>
+                            In order to decide whether or not a given institution provides students with favorable outcomes, one must compare the cost
+                            of education with the outcome. Analysis will use cost and earnings metrics to determine this.
+
+                            Of key importance are:
+                        <ul class="diamonds">
+                            <li>
+                                <strong>Median cost of attendance - </strong> This is a more reliable metric than using tuition;
+                                the College Scorecard includes this variable, which gives average annual cost of attendance, accounting for tuition, fees,
+                                books, supplies, and living expenses.
+                            </li>
+                            <li>
+                                <strong>Median earnings 10 years after matriculation - </strong> Median student earnings for all federally aided
+                                students who are employed, but not enrolled.
+                            </li>
+                            <li>
+                                <strong>Threshold earnings - </strong> These variables provide us with the share of students who earn more than a certain amount.
+                                For instance, one might examine the share of students who make greater than $25,000 a year. The threshold of $25,000 was chosen
+                                by College Scorecard because it represents the median wage of workers ages 25 to 34 with only a high-school education.
+                            </li>
+                            <li>
+                                <strong>Earnings-to-cost ratio - </strong> This metric is calculated by dividing median earnings by average cost of attendance.
+                                Other things equal, a higher earnings-to-cost ratio suggests that the school succeeds in providing marketable skills for its
+                                tuition. In theory, schools with an earnings-to-cost ratio lower than 1.0 suggest that the education
+                                does not yield sufficient returns to justify the cost.
+                            </li>
+                        </ul>
+                        </p>
+
+                        <h3>Cost and Earnings</h3>
+                        <p>
+                            Comparing cost and earnings is a good place to start. While there are some limitations with
+                            the earnings data, the aggregate figures can give us a good insight as to overall market
+                            trends.
+                        </p>
+                        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Costvsearnings&#47;story2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Costvsearnings&#47;story2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Costvsearnings&#47;story2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <!-- STUDENT BODY -->
+        <li id="students">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="contentHeader">Demographics</h1>
+                    <div class="contentBody">
+
+                        <p>
+                            The dataset gives us a generous array of variables with which to examine demographics.
+                            With these variables, we can paint a broad picture of what higher-education student population
+                            looks like at a number of institutions. The intricacy and granularity of our variables can
+                            also allow us to drill down further and look for patterns of interest.
+                        </p>
+                        <p>
+                            Some of the key demographic variables we are interested in are:
+                        <ul class="diamonds">
+                            <li>
+                                <strong>Race - </strong> Data can tell us the percentage of undergraduates that are white, black, hispanic, asian,
+                                and of other racial background. If sufficient data is present, we may be able to determine trends in
+                                accessibility for minorities, as well as determine a level of diversity/integration at the university
+                                level.
+                            </li>
+                            <li>
+                                <strong>Student dependence status - </strong> Students who rely on financial support from their
+                                parents or family members are usually considered dependent. There has been recent speculation that
+                                certain institutions deliberately target independent students as part of a predatory lending
+                                intent. As our data are high-level aggregate figures, we likely cannot draw a conclusion
+                                with certainty from our dataset. However, there might be suggestive patterns present.
+                            </li>
+                            <li>
+                                <strong>Family income - </strong> The dataset breaks out student population into groups of income,
+                                which may help to illustrate which institutions are a good match for a student given their family's
+                                income.
+                            </li>
+                            <li>
+                                <strong>First-generation - </strong> It has also been speculated that first-generation students
+                                are sometimes targeted with offers financial aid and job prospects, only to be saddled with debt.
+                            </li>
+                        </ul>
+                        </p>
+
+                        <hr />
+
+                        <h3>Race: High-level Overview</h3>
+                        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Demographics_control&#47;story_3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;Demographics_control&#47;story_3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+                        <hr/>
+
+                        <h3>Race: Admission and Completion</h3>
+                        <p>
+                            Many of the most prestigious and costly universities also have high completion rates.
+                            However, these schools are often very homogenous (Caucasian) and lack racial diversity.
+                            One finding of this data exploration is that schools with greater diversity have lower completion rates.
+                            It isn't feasible to draw a causal link with this information, but lower completion rates in more diverse
+                            schools suggest that ethnic minorities may not have the same opportunities.
+                        </p>
+
+                        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1020px; height: 1033px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1020' height='1033' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='AdmissionCompletionbyRace&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ad&#47;AdmissionCompletionbyRace&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <!-- Style -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h1 class="contentHeader">Style Guide</h1>
+                        <div class="contentBody">
+                            <div class="col-md-6 col-small-12">
+                                <img src="img-pdf/style.png"></p>
+                            </div>
+                            <div class="col-md-6 col-small-12">
+                                <p>
+                                    In constructing a web-based visualization, it is often useful to have a style guide.
+                                    Although creating a style guide can be time-intensive, it ultimately saves a great deal of time
+                                    deliberating over small details such as fonts, colors, alignment and overall aesthetics.
+                                </p>
+                                <p>
+                                    Color-blind accessibility and readability are critical for visualizations featuring color
+                                    as a functional dimension.
+                                    The use of style and aesthetics in
+                                    visualizations is not only for visual appeal; it serves the function of making information
+                                    more accessible and digestible to readers. My colors are derived from Tableau's
+                                    <i>Color Blind 10</i> palette.
+                                </p>
+                                <p>
+                                    The main fonts, <a href="https://www.google.com/fonts/specimen/Open+Sans">Open Sans</a> and <a href="https://www.google.com/fonts/specimen/Montserrat"> Montserrat</a>
+                                    are freely available from Google Fonts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- For UI effects-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+    <script src="js/animate-glossary.js"></script>
+
+</div>
+</body>
+</html>

@@ -13,17 +13,21 @@
 a {
   color: #c25400;
 }
-ul.list {
+/*** FOR LISTS ***/
+ul {
+  list-style: none;
+}
+ul.diamonds {
   padding-left: 0;
   list-style-position: outside;
   list-style: none;
 }
-ul.list li {
+.diamonds li {
   margin-top: 15px;
   margin-left: 25px;
   position: relative;
 }
-ul.list li::before {
+.diamonds li::before {
   content: " ";
   color: rgba(62,62,71,0.8);
   line-height: 1.5;
