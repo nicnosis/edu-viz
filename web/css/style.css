@@ -2,13 +2,13 @@
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #4b5359;
+  color: #41484d;
 }
 #eduviz > div.container {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 27px;
-  color: #4b5359;
+  color: #41484d;
 }
 a {
   color: #c25400;
@@ -38,14 +38,15 @@ ul.list li::before {
 }
 h1 {
   text-align: center;
-  color: #323b43;
+  color: #1d2226;
   font-size: 32px;
   border-bottom: 2px solid #c25400;
   letter-spacing: 3px;
+  margin-bottom: 20px;
 }
 h3 {
   font-weight: 600;
-  color: #323b43;
+  color: #1d2226;
   font-size: 24px;
   margin-bottom: 20px;
 }
