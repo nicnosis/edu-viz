@@ -10,8 +10,16 @@
   line-height: 27px;
   color: #41484d;
 }
-a {
+#eduviz > div.container a {
   color: #c25400;
+  padding-left: 10px;
+}
+.row {
+  max-width: 1020px;
+}
+.col-md-12 {
+  padding-left: 0;
+  padding-right: 0;
 }
 span.idTag {
   visibility: none;
@@ -22,18 +30,22 @@ span.idTag {
 /* assume smaller screen first */
   position: fixed;
   top: 3.85rem;
-  right: 50%;
-  margin-right: 30em;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
   opacity: 0.95;
+  color: #c2570a;
 }
 #glossary li {
-  font-size: 12px;
+  font-size: 13px;
+  text-align: beginning;
 }
-#glossary li a:hover {
-  text-decoration: none;
+#glossary li a {
+  border-left: 1px solid transparent;
+  padding-right: 10px;
 }
 /* if screen size gets wider than specified width  */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1175px) {
   #glossary {
     display: block;
   }

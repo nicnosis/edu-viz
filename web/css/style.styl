@@ -17,8 +17,16 @@ $bodyColor = #41484d
   line-height 27px
   color $bodyColor
 
-a
-  color #c25400
+  a
+    color #c25400
+    padding-left 10px
+
+.row
+  max-width: 1020px;
+
+.col-md-12
+  padding-left 0
+  padding-right 0
 
 span.idTag
   visibility none
@@ -29,22 +37,26 @@ span.idTag
 
   position: fixed;
   top: 3.85rem;
-  right: 50%;
-  margin-right: 30em;
+  left: 0;
+  margin-left: auto
+  margin-right: auto
   opacity: 0.95;
 
 
+  color #C2570A
+
   li
-    font-size 12px
+    font-size 13px
+    text-align beginning
 
-    a:hover
-      text-decoration: none;
-
+    a
+      border-left 1px solid transparent
+      padding-right 10px
 
 
 
 /* if screen size gets wider than specified width  */
-@media screen and (min-width:1024px){
+@media screen and (min-width:1175px){
   #glossary {
     display:block;
   }

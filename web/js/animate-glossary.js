@@ -31,7 +31,6 @@ if (!("ontouchstart" in window)) {
             window.location.hash = href.substr(1); // should these be 0 or 1?
             $(this).attr("id", href.substr(1));
 
-            console.log("Velocity scroll complete.");
         }});
     });
 
@@ -70,10 +69,10 @@ if (!("ontouchstart" in window)) {
 
             if (offset.top >= window.scrollY) {
                 if ($oldBest && $oldBest.length) {
-                    $oldBest.css({ background: "", borderBottom: "" });
+                    $oldBest.css({ background: "", borderLeft: "1px solid transparent" });
                 }
 
-                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css({ background: "rgba(76, 185, 255, 0.175)", borderBottom: "1px solid rgba(76, 185, 255, 0.175)" });
+                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css({ background: "rgba(194, 87, 10, 0.125)", borderLeft: "1px solid rgba(194, 87, 10, 0.75)" });
 
                 return false;
             }
