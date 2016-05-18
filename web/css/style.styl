@@ -16,7 +16,7 @@ $bodyColor = #41484d
 
 div.container-fluid#content,
 ul#main-content
-  padding-left 0
+  padding-left 15
   max-width 1050px
 
 span.by-line
@@ -60,6 +60,7 @@ span.idTag
   li
     font-size 13px
     text-align beginning
+    margin-top 2px
 
     a
       border-left 1px solid transparent
@@ -69,7 +70,7 @@ span.idTag
 
 
 /* if screen size gets wider than specified width  */
-@media screen and (min-width:1175px){
+@media screen and (min-width:1310px){
   #glossary {
     display:block;
   }
@@ -107,8 +108,11 @@ h1
   text-align: center
   color $headingColor
   font-size 32px
-  border-bottom 2px solid $red
   letter-spacing: 3px
+
+  padding-top 10px
+  border-top 1px solid #dedede
+  border-bottom 2px solid $red
   margin-bottom 20px
 
 h3
@@ -125,8 +129,3 @@ h1
 /* Nav and logo stuff */
 #edu-brand
   color $red
-
-.logo
-  float: left
-  width 585px
-

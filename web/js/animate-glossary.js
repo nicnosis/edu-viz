@@ -37,7 +37,8 @@ if (!("ontouchstart" in window)) {
     var section,
         sections = {},
         // $contentPanes = $("#main-content > li[id]"), // #contentPanes is a <ul>
-        $contentPanes = $("#main-content > li[id]"), // #contentPanes is a <ul>
+        $contentPanes = $("#main-content > li[id]").not("[noglossary='true']"), // #contentPanes is a <ul>
+
         $oldBest;
 
     $contentPanes.each(function(){
