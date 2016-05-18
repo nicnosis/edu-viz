@@ -72,7 +72,7 @@ if (!("ontouchstart" in window)) {
                     $oldBest.css({ background: "", borderLeft: "1px solid transparent" });
                 }
 
-                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css({ background: "rgba(194, 87, 10, 0.125)", borderLeft: "1px solid rgba(194, 87, 10, 0.75)" });
+                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css({ background: "rgba(194, 87, 10, 0.125)", borderLeft: "1px solid rgba(194, 87, 10, 0.5)" });
 
                 return false;
             }
