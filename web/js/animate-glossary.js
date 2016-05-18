@@ -63,7 +63,6 @@ if (!("ontouchstart" in window)) {
     }
 
     $(window).on("scroll", function() {
-
         $contentPanes.each(function(){
             var $this = $(this),
                 offset = $this.offset();

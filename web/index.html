@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>eduViz</title>
-    <meta name="description" content="Tableau-based visualization of the Department of Education's College Scorecard Data">
+    <meta name="description" content="Tableau-based visualization using the Department of Education's College Scorecard Data">
     <meta name="author" content="Nicolas Aguirre">
     <link rel="icon" href="favicon.ico">
 
@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+
 
 
 </head>
@@ -32,12 +33,12 @@
     <ul id="main-content">
         <!-- LOGO -->
         <li id="logo" noglossary="true">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <img class="center-block" src="img-pdf/logo.png" />
                 </div>
             </div>
-            <!--
+            <!-- TODO
             <div class="row">
                 <div class="col-md-12">
                     <span class="by-line">Nicolas Aguirre</span>
@@ -48,7 +49,7 @@
 
         <!-- INTRO -->
         <li id="intro">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <h1 class="contentHeader">Introduction</h1>
                     <span class="idTag"></span>
@@ -58,7 +59,7 @@
                             <b>eduViz</b> is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
                             The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
                             debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data
-                            from 2013.
+                            from 2013. Cohort earnings data is from 2011 (most recent available).
                         </p>
                         <p>
                             This analysis is designed for data scientists, analysts, and others with statistical literacy.
@@ -75,7 +76,16 @@
                             I have documented every step taken to parse the dataset. This is also done to ensure that other data scientists and developers can reproduce the parsed data and get the same result.
                             The key tools used are <i><a href="https://www.python.org/">Python</a></i>,
                             <i><a href="http://www.grymoire.com/Unix/Sed.html">sed,</a></i> and <i><a href="https://csvkit.readthedocs.org/en/0.9.1/">csvkit</a></i>.
-                            A detailed <a href="http://jupyter.org/">Jupyter</a> Notebook with code in Python and Bash is available <a href="notebook.html">here.</a> (or click the 'Process' button on the navigation bar)
+                            A detailed <a href="http://jupyter.org/">Jupyter</a> Notebook with code in Python and Bash is available.
+                        </p>
+                        <p>
+                            <button class="btn" id="buttonLink">
+
+                                <a href="notebook.html">
+                                    View Notebook
+                                    <span class="glyphicon glyphicon-link"></span>
+                                </a>
+                            </button>
                         </p>
                     </div>
                 </div>
@@ -83,7 +93,7 @@
         </li>
         <!-- TERMS -->
         <li id="terms">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <h1 class="contentHeader">Terms of Importance</h1>
                     <div class="contentBody">
@@ -139,7 +149,7 @@
 
         <!-- TAKEAWAYS -->
         <li id="takeaways">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <h1 class="contentHeader">Findings</h1>
                     <span class="idTag"></span>
@@ -214,21 +224,22 @@
                                             median earnings are under $25,000:
                                         </p>
 
-                                        <table class="table table-striped">
+                                        <table class="table table-condensed table-striped" id="dataTable">
                                             <thead><tr><th>Type</th><th>School Name</th><th>Median Yearly Cost</th><th>Median 10-year Earnings</th></tr></thead>
                                             <tbody>
-                                                <tr><td>Private nonprofit</td><td>Landmark College</td><td>64,233</td><td>22,200</td></tr>
-                                                <tr><td>Private nonprofit</td><td>San Francisco Art Institute</td><td>55,809</td><td>24,600</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Manhattan School of Music</td><td>53,903</td><td>22,700</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Pennsylvania Academy of the Fine Arts</td><td>43,656</td><td>20,900</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Maine College of Art</td><td>43,313</td><td>23,700</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Pacific Northwest College of Art</td><td>43,235</td><td>22,600</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Naropa University</td><td>42,575</td><td>18,600</td></tr>
-                                                <tr><td>Private nonprofit</td><td>Montserrat College of Art</td><td>37,866</td><td>25,100</td></tr>
-                                                <tr><td>Private for-profit</td><td>Advertising Art Educational Services <br />DBA School of Advertising Art</td><td>37,702</td><td>22,200</td></tr>
-                                                <tr><td>Private for-profit</td><td>AmeriTech College-Draper</td><td>37,574</td><td>23,800</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Landmark College</td><td>64,233</td><td>22,200</td></tr>
+                                            <tr><td>Private nonprofit</td><td>San Francisco Art Institute</td><td>55,809</td><td>24,600</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Manhattan School of Music</td><td>53,903</td><td>22,700</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Pennsylvania Academy of the Fine Arts</td><td>43,656</td><td>20,900</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Maine College of Art</td><td>43,313</td><td>23,700</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Pacific Northwest College of Art</td><td>43,235</td><td>22,600</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Naropa University</td><td>42,575</td><td>18,600</td></tr>
+                                            <tr><td>Private nonprofit</td><td>Montserrat College of Art</td><td>37,866</td><td>25,100</td></tr>
+                                            <tr><td>Private for-profit</td><td>Advertising Art Educational Services DBA School of Advertising Art</td><td>37,702</td><td>22,200</td></tr>
+                                            <tr><td>Private for-profit</td><td>AmeriTech College-Draper</td><td>37,574</td><td>23,800</td></tr>
                                             </tbody>
                                         </table>
+
 
                                         <p>
                                             Important to note is that <strong>Landmark College</strong> is an institution that specializes in
@@ -257,7 +268,7 @@
 
         <!-- YOUR SCHOOL -->
         <li id="your-school">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
 
                     <h1 class="contentHeader">Your School at a Glance</h1>
@@ -296,7 +307,7 @@
 
         <!-- STORY 1 -->
         <li id="spending">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
 
                     <h1 class="contentHeader">How Colleges Spend Money</h1>
@@ -307,16 +318,17 @@
                             These diagrams detail <strong>tuition revenue per full-time student</strong> and <strong>average monthly faculty salary.</strong> These metrics provide a proxy for how universities source their revenue,
                             and the caliber of teaching faculty they strive to maintain.
                         </p>
-                        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1129px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1129' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='eduviz_1&#47;story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
+                    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1054px; height: 1129px;'><noscript><a href='#'><img alt='Story Title ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1054' height='1129' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='eduviz_1&#47;story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ed&#47;eduviz_1&#47;story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
                     </div>
 
                 </div>
             </div>
+
         </li>
 
         <li id="cost">
             <!-- Cost -->
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <h1 class="contentHeader">Is College Worth It?</h1>
                     <span class="idTag"></span>
@@ -372,7 +384,7 @@
 
         <!-- STUDENT BODY -->
         <li id="students">
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <h1 class="contentHeader">Demographics</h1>
                     <span class="idTag"></span>
@@ -435,7 +447,7 @@
 
         <li>
             <!-- Style -->
-            <div class="row">
+            <div class="row rowFixed center-block">
                 <div class="col-md-12">
                     <div class="row">
                         <h1 class="contentHeader">Style Guide</h1>
@@ -478,6 +490,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
     <script src="js/animate-glossary.js"></script>
+
+
+
 
 </div>
 </body>

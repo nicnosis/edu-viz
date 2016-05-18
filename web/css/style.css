@@ -1,12 +1,29 @@
-.container-fluid {
+body {
+  background-color: #fff;
+}
+.container,
+container-fluid {
   margin-right: auto;
   margin-left: auto;
+}
+container {
   max-width: 1054px;
 }
-div.container-fluid#content,
+.container-fluid {
+  background-color: #fff;
+  max-width: 100%;
+}
+div.container-fluid#content {
+  background-color: #fff;
+}
 ul#main-content {
-  padding-left: 15;
-  max-width: 1050px;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.row.rowFixed {
+  background-color: #fff;
+  max-width: 1054px;
 }
 span.by-line {
   font-size: 12px;
@@ -24,15 +41,17 @@ img.take-pic {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #41484d;
+  color: #2e3136;
 }
-#eduviz > div.container-fluid {
+#eduviz > div.container-fluid,
+#eduviz > div.container {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 27px;
-  color: #41484d;
+  color: #2e3136;
 }
-#eduviz > div.container-fluid a {
+#eduviz > div.container-fluid a,
+#eduviz > div.container a {
   color: #c25400;
 }
 span.idTag {
@@ -62,7 +81,7 @@ span.idTag {
   padding-right: 8px;
 }
 /* if screen size gets wider than specified width  */
-@media screen and (min-width: 1310px) {
+@media screen and (min-width: 1360px) {
   #glossary {
     display: block;
   }
@@ -98,12 +117,12 @@ ul.diamonds {
 h1 {
   text-align: left;
   color: #1d2226;
-  font-size: 32px;
+  font-size: 30px;
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   padding-left: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-top: 2px solid #c25400;
   border-bottom: 2px solid #c25400;
   margin-bottom: 25px;
@@ -114,7 +133,24 @@ h3 {
   font-size: 24px;
   margin-bottom: 20px;
 }
+/* UI COMPONENTS */
+button.btn#buttonLink {
+  background-color: #d5d5d5;
+}
+table#dataTable {
+  font-size: 13px;
+background-color
+}
+/* TABLEAU CONTAINER */
+.tableauPlaceholder {
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-toolbar {
+  background-color: #fff;
 /* Nav and logo stuff */
+}
 #edu-brand {
   color: #c25400;
 }
