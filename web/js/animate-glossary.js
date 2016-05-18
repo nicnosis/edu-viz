@@ -70,10 +70,15 @@ if (!("ontouchstart" in window)) {
 
             if (offset.top >= window.scrollY) {
                 if ($oldBest && $oldBest.length) {
-                    $oldBest.css({ background: "", borderLeft: "1px solid transparent" });
+                    $oldBest.css({ background: "", borderLeft: "1px solid transparent", color: "#C25400"});
                 }
 
-                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css({ background: "rgba(194, 87, 10, 0.125)", borderLeft: "1px solid rgba(194, 87, 10, 0.5)" });
+                $oldBest = $glossary.find("a[href=#" + $this.attr("id") + "]").css(
+                    {
+                        background: "rgba(194, 87, 10, 0.125)",
+                        borderLeft: "1px solid rgba(194, 87, 10, 0.5)",
+                        color: "#803500"
+                    });
 
                 return false;
             }
