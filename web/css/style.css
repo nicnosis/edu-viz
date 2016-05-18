@@ -17,6 +17,9 @@ div.take-text {
   font-size: 18px;
   margin-bottom: 25px;
 }
+img.take-pic {
+  margin-bottom: 40px;
+}
 #eduviz > div > div:nth-child(1) {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
