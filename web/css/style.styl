@@ -2,8 +2,27 @@ $red = #C25400
 $indigo = #595959
 $blue = #3675B7
 
+$maxWidth = 1020px;
+
 $headingColor = #1d2226
 $bodyColor = #41484d
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1054px;
+}
+
+
+div.container-fluid#content,
+ul#main-content
+  padding-left 0
+  max-width 1050px
+
+span.by-line
+  font-size 12px
+  color #7f7f7f
+
 
 #eduviz > div > div:nth-child(1)
   font-family: 'Open Sans', sans-serif;
@@ -11,7 +30,7 @@ $bodyColor = #41484d
   line-height 1.5
   color $bodyColor
 
-#eduviz > div.container
+#eduviz > div.container-fluid
   font-family: 'Open Sans', sans-serif;
   font-size 16px
   line-height 27px
@@ -20,13 +39,6 @@ $bodyColor = #41484d
   a
     color $red
 
-
-.row
-  max-width: 1020px;
-
-.col-md-12
-  padding-left 0
-  padding-right 0
 
 span.idTag
   visibility none

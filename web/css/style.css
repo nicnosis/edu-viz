@@ -1,24 +1,31 @@
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1054px;
+}
+div.container-fluid#content,
+ul#main-content {
+  padding-left: 0;
+  max-width: 1050px;
+}
+span.by-line {
+  font-size: 12px;
+  color: #7f7f7f;
+}
 #eduviz > div > div:nth-child(1) {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #41484d;
 }
-#eduviz > div.container {
+#eduviz > div.container-fluid {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 27px;
   color: #41484d;
 }
-#eduviz > div.container a {
+#eduviz > div.container-fluid a {
   color: #c25400;
-}
-.row {
-  max-width: 1020px;
-}
-.col-md-12 {
-  padding-left: 0;
-  padding-right: 0;
 }
 span.idTag {
   visibility: none;
