@@ -9,7 +9,7 @@
     <title>eduViz</title>
     <meta name="description" content="Tableau-based visualization using the Department of Education's College Scorecard Data">
     <meta name="author" content="Nicolas Aguirre">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png" type="img/png">
 
 
     <!-- Google Font -->
@@ -54,7 +54,6 @@
                     <h1 class="contentHeader">Introduction</h1>
                     <span class="idTag"></span>
                     <div class="contentBody">
-                        <h3>What is eduViz?</h3>
                         <p>
                             <b>eduViz</b> is a visualization project that aims to make sense of the recently-released <a href="https://collegescorecard.ed.gov/data/">College Scorecard Data</a>.
                             The dataset, provided by the Department of Education, contains information on higher-education institutions. Some of the metrics provided are admission rates, student completion rates,
@@ -229,7 +228,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="take-text">
-                                            Schools with less diversity generally have lower completion rates and earnings.
+                                            Schools with greater share of ethnic minorities generally have lower completion rates and earnings.
                                         </div>
                                     </div>
                                 </div>
@@ -349,31 +348,13 @@
                     <h1 class="contentHeader">Your School at a Glance</h1>
                     <span class="idTag"></span>
                     <div class="contentBody">
-                        <p><strong>Coming soon.</strong></p>
-                        <!--
-                        <ul class="diamonds">
-                            <li>
-                                admission
-                            </li>
-                            <li>
-                                completion
-                            </li>
-                            <li>
-                                revenue
-                            </li>
-                            <li>
-                                facsal
-                            </li>
-
-                            racial diversity
-
-                            accessibility
-                            cost
-
-                            percentiles?
-                        </ul>
-                        -->
+                        <p>
+                            While analysis focuses on aggregate metrics from this dataset, some will take interest in viewing a given school.
+                            <br />
+                            Use the <b>Search for a School</b> form to find a school, select it and click <b>View summary</b>.
+                        </p>
                     </div>
+                    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 895px;'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Yo&#47;YourSchoolataGlance&#47;Selectyourschool&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='895' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='YourSchoolataGlance&#47;Selectyourschool' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Yo&#47;YourSchoolataGlance&#47;Selectyourschool&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showTabs' value='y' /></object></div>
 
                 </div>
             </div>
@@ -534,7 +515,7 @@
                 </div>
             </div>
         </li>
-        <li>
+        <li id="style">
             <hr class="spacer-25" />
             <!-- Style -->
             <div class="row rowFixed center-block">
@@ -570,10 +551,10 @@
                 </div>
             </div>
             <hr class="spacer-25" />
-
-
-
         </li>
+
+
+
     </ul>
 
 
