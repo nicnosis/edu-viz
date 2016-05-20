@@ -111,6 +111,24 @@ ul.diamonds {
   padding-bottom: 15px;
   border-bottom: 1px solid rgba(90,90,90,0.15);
 }
+.diamonds.listo li {
+  padding-bottom: 5px;
+  margin-left: 40px;
+  margin-top: 5px;
+  border-bottom: 0;
+}
+.diamonds.listo li::before {
+  left: -18px;
+}
+.diamonds.listo2 li {
+  padding-bottom: 5px;
+  margin-left: 10px;
+  margin-top: 5px;
+  border-bottom: 0;
+}
+.diamonds.listo2 li::before {
+  opacity: 0;
+}
 .diamonds li::before {
   content: " ";
   color: rgba(62,62,71,0.8);
@@ -133,8 +151,19 @@ h1 {
   padding-left: 5px;
   padding-top: 8px;
   padding-bottom: 8px;
-  border-top: 2px solid #c25400;
   border-bottom: 2px solid #c25400;
+  margin-bottom: 25px;
+}
+h2 {
+  text-align: left;
+  color: #1d2226;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1.5px solid #c25400;
   margin-bottom: 25px;
 }
 h3 {

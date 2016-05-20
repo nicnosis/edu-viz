@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>eduViz</title>
+    <meta name="description" content="Tableau-based visualization using the Department of Education's College Scorecard Data">
+    <meta name="author" content="Nicolas Aguirre">
+    <link rel="icon" href="favicon.png" type="img/png">
+
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+<body id="eduviz">
+
+<div class="container" id="content">
+    <!-- SUMMARY -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Summary</h2>
+            <p>
+                eduViz is a visualization project that aims to make sense of the recently-released College Scorecard Data. The dataset, provided by the Department of Education, contains information on higher-education institutions. This project began with the intent of indicating predatory lending practices in universities, but eventuated as a more expansive and high-level overview of the higher education market.
+            </p>
+
+            <p>
+                Some of the metrics provided are admission rates, student completion rates, debt and repayment, earnings, demographics and more. The dataset contains nearly twenty years of data, with about 1700 variables tracked. Most of this visualization will focus on data from 2013.
+            </p>
+        </div>
+    </div>
+
+    <!-- PROJECT SCOPE -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Project Scope</h2>
+            <p>
+                Last semester, I visited ProPublica in New York to meet with some of their reporters. In the process, I became more acquainted with the dataset and some of the stories that could emerge from a compelling visualization. The primary goal of this project is to <strong>visualize</strong> a non-trivial and massive dataset, with the hopes of extracting meaningful findings and providing other data scientists with a useful reference for the dataset.
+            </p>
+            <p>
+                With such an expansive base of variables, much of the project focuses on statistical analysis.
+                Determining which variables are greatest importance, and which are most apt for drawing conclusions proved to be a difficult and arduous process.
+            </p>
+        </div>
+    </div>
+
+    <!-- OBJECTIVES -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Objectives</h2>
+            <p>The main goal of this visualization story is to serve as a tool that:</p>
+            <ul class="listo diamonds">
+                <li>Gives an overview of higher education in America</li>
+                <li>Reveal insightful trends and patterns</li>
+                <li>Allows students, parents, and professors to compare and contrast which schools are more affordable and accessible</li>
+                <li>Provide aspiring data scientists with resources and methods for their own analyses</li>
+            </ul>
+            <p>
+                To convey a successful idea of this visualization, the website strives to be:
+            </p>
+            <ul class="listo diamonds">
+                <li>
+                    Intuitive - Needs little explanation, guides the user's experience naturally
+                </li>
+                <li>Accessible - Understandable to data-literate readers of different levels</li>
+                <li>
+                    Usable – Able to be navigated and operated without error or frustration
+                </li>
+                <li>
+                    Compelling - Providing sobering conclusions from thorough analysis
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- AUDIENCE -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Audience</h2>
+            <p>
+                The main goal is to take an immense and somewhat cryptic dataset and transform it into a visualization, or series of visualizations that is sensible and more readily available to the general public. This project's primary audience is <strong>data-literate</strong> readers. The data caters mostly to statisticians and researchers and other data scientists.
+            </p>
+            <p>
+                My original audience was the reporting staff at <i>ProPublica,</i> in particular
+                <a href="http://www.propublica.org/site/author/annie_waldman">Annie Waldman</a> and
+                <a href="https://www.propublica.org/site/author/scott_klein">Scott Klein.</a>
+            </p>
+            <p>
+                Some others who will likely take interest are:
+            </p>
+            <ul class="listo diamonds">
+                <li>Potential education stakeholders – Students seeking to further education, as well as professors and others affected by performance of universities</li>
+                <li>Members of education-driven entities such as Kaplan, CollegeBoard, and ACT</li>
+                <li>Persons of power in universities – Those who direct financial resources or influence the school’s approach in providing affordable education</li>
+                <li>General Public – This app will exist firstly as a story-telling mechanism, with the primary purpose to inform.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Marketplace and Barriers -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Marketplace and Barriers</h2>
+
+            <ul class="listo diamonds">
+                <li>
+                    Propaganda and advertising of for-profit institutions has the ability to obscure the story’s message.
+                </li>
+                <li>
+                    Skepticism of readers – this can be mitigated with the availability of source data and a comprehensive description of methodology.
+                </li>
+                <li>
+                    Lack of comprehension – If the visualization is too robust, complicated, or requires special knowledge; it will limit the number of people who understand it. The project aims to be highly intuitive and accessible.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Design -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Design</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p>
+                        In constructing a web-based visualization, it is often useful to have a style guide.
+                        Although creating a style guide can be time-intensive, it ultimately saves a great deal of time
+                        deliberating over small details such as fonts, colors, alignment and overall aesthetics. Some of the design goals are:
+                    </p>
+                    <ul class="listo listo2 diamonds">
+                        <li>
+                            Intuitive and usable interface – The tool should be easy to use for almost everyone
+                        </li>
+                        <li>
+                            Aesthetic and minimal – Visual design will be practical, simple, and aesthetic elements will serve a functional purpose (e.g., color of data points as a representation of ordinal category)
+                        </li>
+                        <li>
+                            User’s experience with the site should be unobtrusive, satisfying and memorable. One’s reading and interaction with the app will make for a lasting impression
+                        </li>
+                    </ul>
+                    <p>
+                        Color-blind accessibility and readability are critical for visualizations featuring color
+                        as a functional dimension.
+                        The use of style and aesthetics in
+                        visualizations is not only for visual appeal; it serves the function of making information
+                        more accessible and digestible to readers. My colors are derived from Tableau's
+                        <i>Color Blind 10</i> palette.
+                    </p>
+                    <p>
+                        The main fonts, <a href="https://www.google.com/fonts/specimen/Open+Sans">Open Sans</a> and <a href="https://www.google.com/fonts/specimen/Montserrat"> Montserrat</a>
+                        are freely available from Google Fonts.
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <img src="img-pdf/style.png"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Deliverable -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Deliverable</h2>
+            <p>The product comes with three main parts: </p>
+            <ul class="listo diamonds">
+                <li>
+                    Data processing - My <a href="notebook.html">iPython Notebook</a>, featuring detailed process of
+                    preparing the data for analysis.
+                </li>
+                <li>
+                    Data analysis - <a href="index.html">eduViz.io</a>
+                </li>
+                <li>
+                    Github repository with code - <a href="https://github.com/cyniclone/edu-viz">https://github.com/cyniclone/edu-viz</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- User Stories -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>User Stories</h2>
+            <p>
+                User stories are a useful way to determine the ways in which the project will be used and the needs of users.
+                Examining use-case scenarios allows one to better provide for varying audience members
+                and enhance usability.
+            </p>
+
+            <p>
+                As a potential <strong>college student</strong>, or person seeking higher education...
+            </p>
+            <ul class="listo diamonds">
+                <li>
+                    <strong>I want to </strong>– compare and contrast different colleges, looking at affordability, and outcomes; learn important terms regarding financial aid.
+                </li>
+                <li>
+                    <strong>So I can </strong>– select an affordable school that garners positive career prospects.
+                </li>
+            </ul>
+
+            <p>
+                As a <strong>professor</strong>, or individual working in higher education,
+            </p>
+            <ul class="listo diamonds">
+                <li>
+                    <strong>I want to </strong>– see how my school compares to others in terms of debt and career outcomes.
+                </li>
+                <li>
+                    <strong>So I can </strong>– take active involvement in my school for matters that regard financial aid.
+                </li>
+            </ul>
+
+            <p>
+                As a <strong>data scientist</strong>...
+            </p>
+            <ul class="listo diamonds">
+                <li>
+                    <strong>I want to </strong>– see the author's methodology and approach to the dataset.
+                </li>
+                <li>
+                    <strong>So I can </strong>– conduct my own analyses and further contribute.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Appendix -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Appendix</h2>
+            <p>Other useful documents produced in the making of this project:</p>
+            <ul class="listo diamonds">
+                <li>
+                    <a href="img-pdf/Gantt.png">Gantt Chart</a>
+                </li>
+                <li>
+                    <a href="img-pdf/comparing-approaches.pdf">Thoughts on different project management methodologies</a>
+                </li>
+                <li>
+                    What a <a href="img-pdf/WBS.png">Work Breakdown Structure</a> might look like.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- For UI effects-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js"></script>
+<script src="js/animate-glossary.js"></script>
+
+</div>
+</body>
+</html>
